@@ -1,0 +1,6 @@
+---
+- name: Install goutils
+  shell: "go get -u {{ util_name }}"
+  loop: "{{ goutils }}"
+  loop_control:
+    loop_var: util_name

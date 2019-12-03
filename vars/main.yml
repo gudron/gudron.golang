@@ -1,0 +1,13 @@
+---
+
+bash_exists: "{{ lookup('pipe','test -e /bin/bash && echo True || echo False') | bool }}"
+bashrc_path: "{{ lookup('env','HOME') }}/.bashrc"
+bashrc_golang_path: "{{ bashrc_path }}.golang"
+
+zsh_exists: "{{ lookup('pipe','test -e /usr/bin/zsh && echo True || echo False') | bool }}"
+zshrc_path: "{{ lookup('env','HOME') }}/.zshrc"
+zshrc_golang_path: "{{ lookup('env','HOME') }}/.config/zsh/golang.sh"
+
+vscode_bin_paths: "{{ lookup('pipe','whereis -b code') }}"
+vscode_bin_path: "{{ vscode_bin_paths.split(' ')[1] }}"
+vscode_exists: "{{ lookup('pipe','test -e ' + vscode_bin_paths + ' && echo True || echo False') | bool }}"

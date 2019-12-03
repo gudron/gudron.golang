@@ -1,0 +1,7 @@
+---
+add_repository_module: apt_repository
+
+packages: 
+  - "golang-{{ golang_version }}"
+
+repository_name: deb http://deb.debian.org/debian/ unstable main

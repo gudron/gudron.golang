@@ -1,0 +1,12 @@
+---
+- name: Prepare zshrc file
+  include_tasks: config_shells/config_zsh.yml
+  when: zsh_exists
+
+- name: Prepare zshrc file
+  include_tasks: config_shells/config_bash.yml
+  when: bash_exists
+
+- name: Prepare Visual studio code
+  include_tasks: config_ide/config_vscode.yml
+  when: vscode_exists

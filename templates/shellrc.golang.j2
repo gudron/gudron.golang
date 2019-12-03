@@ -1,0 +1,4 @@
+{{ ansible_managed | comment }}
+
+export GOPATH={{ golang_path }}
+export PATH=$PATH:/usr/lib/go-{{ golang_version }}/bin:$GOPATH/bin

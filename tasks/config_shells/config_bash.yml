@@ -1,0 +1,20 @@
+---
+- name: Set shellrc facts
+  set_fact:
+    shellrc_golang_path: "{{ bashrc_golang_path }}"
+
+- name: Create zshrc golang file
+  template:
+    src: "templates/shellrc.golang.j2"
+    dest: "{{ bashrc_golang_path }}"
+    mode: "0600"
+
+- name: Add include go
+  blockinfile:
+    content: "{{ lookup('template', 'templates/shellrc_include_block.j2') }}"
+    dest: "{{ bashrc_path }}"
+    state: present
+    marker: "# ANSIBLE MAGED BLOCK {mark}"
+    marker_begin: "# BEGIN GOLANG CONFIG"
+    marker_end: "# END GOLANG CONFIG"
+    backup: yes

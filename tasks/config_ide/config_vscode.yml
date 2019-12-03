@@ -1,0 +1,6 @@
+---
+- name: Install vscode extentions
+  shell: "{{ vscode_bin_path }} --install-extension {{ extension_name }}"
+  loop: "{{ vscode_extensions }}"
+  loop_control:
+    loop_var: extension_name

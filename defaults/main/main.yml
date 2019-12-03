@@ -1,0 +1,11 @@
+---
+golang_version: 1.12
+golang_path: "$HOME/go"
+
+goutils:
+  - golang.org/x/lint/golint
+  - github.com/nsf/gocode
+  - github.com/tools/godep
+
+vscode_extensions:
+  - ms-vscode.go

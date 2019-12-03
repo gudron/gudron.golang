@@ -1,0 +1,7 @@
+---
+add_repository_module: apt_repository
+
+packages: 
+  - golang-go
+
+repository_name: ppa:gophers/archive
